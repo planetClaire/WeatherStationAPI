@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherStationAPI", "WeatherStationAPI\WeatherStationAPI.csproj", "{522CCC25-918B-4485-BE4C-E207BAFEDED2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherStationDataModel", "WeatherStationDataModel\WeatherStationDataModel.csproj", "{1D735447-B9BB-4C49-A1CB-4497C9E1B05A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{522CCC25-918B-4485-BE4C-E207BAFEDED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{522CCC25-918B-4485-BE4C-E207BAFEDED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{522CCC25-918B-4485-BE4C-E207BAFEDED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D735447-B9BB-4C49-A1CB-4497C9E1B05A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D735447-B9BB-4C49-A1CB-4497C9E1B05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D735447-B9BB-4C49-A1CB-4497C9E1B05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D735447-B9BB-4C49-A1CB-4497C9E1B05A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
