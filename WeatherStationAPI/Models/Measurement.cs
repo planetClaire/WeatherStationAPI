@@ -2,7 +2,7 @@
 
 namespace WeatherStationAPI.Models
 {
-    public class Measurement
+    public abstract class Measurement
     {
         public int Id { get; set; }
         public MeasurementType MeasurementType { get; set; }

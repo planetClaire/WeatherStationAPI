@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201512080923516_Initial.cs" />
+    <Compile Include="Migrations\201512080923516_Initial.Designer.cs">
+      <DependentUpon>201512080923516_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WeatherStationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,6 +63,11 @@
       <Project>{522CCC25-918B-4485-BE4C-E207BAFEDED2}</Project>
       <Name>WeatherStationAPI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512080923516_Initial.resx">
+      <DependentUpon>201512080923516_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
