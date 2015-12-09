@@ -52,3 +52,4 @@ _ReSharper*/
 
 #NuGet
 packages/
+*/App_Data/*
