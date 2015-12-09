@@ -1,15 +1,23 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 using WeatherStationDataModel;
+using WeatherStationDataModel.Entities;
 
 namespace WeatherStationAPI.Controllers
 {
     public class SensorsController : ApiController
     {
-        public object Get()
+        private IWeatherStationRepository _repo;
+
+        public SensorsController(IWeatherStationRepository repo)
         {
-            var repo = new WeatherStationRepository(new WeatherStationContext());
-            return repo.GetAllSensors()
+            _repo = repo;
+        }
+
+        public IEnumerable<Sensor> Get()
+        {
+            return _repo.GetAllSensors()
                 .OrderBy(s => s.Name)
                 .ToList();
         }
