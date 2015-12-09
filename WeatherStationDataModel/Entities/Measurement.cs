@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeatherStationAPI.Models
+namespace WeatherStationDataModel.Entities
 {
     public abstract class Measurement
     {

@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using WeatherStationAPI.Models;
+using WeatherStationDataModel.Entities;
 
 namespace WeatherStationDataModel
 {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WeatherStationAPI.Models
+namespace WeatherStationDataModel.Entities
 {
     public class Sensor
     {

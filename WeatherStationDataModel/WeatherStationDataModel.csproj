@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\HumidityMeasurement.cs" />
+    <Compile Include="Entities\Measurement.cs" />
+    <Compile Include="Entities\MeasurementType.cs" />
+    <Compile Include="Entities\Sensor.cs" />
+    <Compile Include="Entities\TemperatureMeasurement.cs" />
+    <Compile Include="IWeatherStationRepository.cs" />
     <Compile Include="Migrations\201512080923516_Initial.cs" />
     <Compile Include="Migrations\201512080923516_Initial.Designer.cs">
       <DependentUpon>201512080923516_Initial.cs</DependentUpon>
@@ -57,12 +63,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WeatherStationAPI\WeatherStationAPI.csproj">
-      <Project>{522CCC25-918B-4485-BE4C-E207BAFEDED2}</Project>
-      <Name>WeatherStationAPI</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512080923516_Initial.resx">

@@ -1,4 +1,4 @@
-﻿namespace WeatherStationAPI.Models
+﻿namespace WeatherStationDataModel.Entities
 {
     public class MeasurementType
     {
