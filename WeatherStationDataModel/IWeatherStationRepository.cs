@@ -11,5 +11,9 @@ namespace WeatherStationDataModel
         // Sensor
         IQueryable<Sensor> GetAllSensors();
         Sensor GetSensor(int id);
+        IQueryable<MeasurementType> GetMeasurementTypes();
+        bool Insert(MeasurementType entity);
+        MeasurementType GetMeasurementType(int measurementtypeid);
+        bool DeleteMeasurementType(int measurementtypeid);
     }
 }

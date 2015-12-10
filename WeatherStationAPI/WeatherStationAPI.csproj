@@ -171,12 +171,14 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MeasurementTypesController.cs" />
     <Compile Include="Controllers\SensorsController.cs" />
     <Compile Include="Controllers\TemperatureMeasurementsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MeasurementTypeModel.cs" />
     <Compile Include="Models\ModelFactory.cs" />
     <Compile Include="Models\SensorModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

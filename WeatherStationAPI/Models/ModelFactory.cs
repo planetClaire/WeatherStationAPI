@@ -22,5 +22,27 @@ namespace WeatherStationAPI.Models
                 Description = sensor.Description,
             };
         }
+
+        public MeasurementTypeModel Create(MeasurementType measurementType)
+        {
+            return new MeasurementTypeModel
+            {
+                Id = measurementType.Id,
+                Url = _urlHelper.Link("MeasurementType", new { measurementtypeid = measurementType.Id }),
+                Name = measurementType.Name
+            };
+        }
+
+        public MeasurementType Parse(MeasurementTypeModel measurementTypeModel)
+        {
+            try
+            {
+                return new MeasurementType { Name = measurementTypeModel.Name };
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

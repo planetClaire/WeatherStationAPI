@@ -29,5 +29,34 @@ namespace WeatherStationDataModel
             //_context.Database.Log = message => Trace.WriteLine(message);
             return _context.Sensors.Find(id);
         }
+
+        public IQueryable<MeasurementType> GetMeasurementTypes()
+        {
+            return _context.MeasurementTypes;
+        }
+
+        public bool Insert(MeasurementType entity)
+        {
+            _context.Database.Log = message => Trace.WriteLine(message);
+            _context.MeasurementTypes.Add(entity);
+            if (_context.SaveChanges() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public MeasurementType GetMeasurementType(int measurementtypeid)
+        {
+            return _context.MeasurementTypes.Find(measurementtypeid);
+        }
+
+        public bool DeleteMeasurementType(int measurementtypeid)
+        {
+            var measurementType = _context.MeasurementTypes.Find(measurementtypeid);
+            if (measurementType == null) return false;
+            _context.MeasurementTypes.Remove(measurementType);
+            return _context.SaveChanges() > 0;
+        }
     }
 }

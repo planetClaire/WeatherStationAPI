@@ -8,5 +8,6 @@ namespace WeatherStationDataModel
         public DbSet<TemperatureMeasurement> TemperatureMeasurements { get; set; }
         public DbSet<HumidityMeasurement> HumidityMeasurements { get; set; }
         public DbSet<Sensor> Sensors { get; set; }
+        public DbSet<MeasurementType> MeasurementTypes { get; set; }
     }
 }
