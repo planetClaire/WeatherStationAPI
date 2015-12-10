@@ -5,9 +5,6 @@ namespace WeatherStationDataModel
 {
     public interface IWeatherStationRepository
     {
-        // General
-        bool SaveAll();
-
         IQueryable<Sensor> GetSensors();
         Sensor GetSensor(int id);
         IQueryable<MeasurementType> GetMeasurementTypes();

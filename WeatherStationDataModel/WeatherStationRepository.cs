@@ -14,10 +14,6 @@ namespace WeatherStationDataModel
             _context = context;
         }
 
-        public bool SaveAll()
-        {
-            throw new System.NotImplementedException();
-        }
         public IQueryable<Sensor> GetSensors()
         {
             return _context.Sensors;
