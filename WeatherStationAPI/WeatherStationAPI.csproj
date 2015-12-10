@@ -174,7 +174,6 @@
     <Compile Include="Controllers\MeasurementTypesController.cs" />
     <Compile Include="Controllers\SensorsController.cs" />
     <Compile Include="Controllers\TemperatureMeasurementsController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
