@@ -172,6 +172,7 @@
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MeasurementTypesController.cs" />
+    <Compile Include="Controllers\SensorMeasurementTypesController.cs" />
     <Compile Include="Controllers\SensorsController.cs" />
     <Compile Include="Controllers\TemperatureMeasurementsController.cs" />
     <Compile Include="Global.asax.cs">

@@ -28,6 +28,13 @@ namespace WeatherStationAPI
                     measurementtypeid = RouteParameter.Optional
                 });
 
+            config.Routes.MapHttpRoute(
+                "SensorMeasurementType", "api/sensors/{sensorid}/measurementtypes/{measurementtypeid}", new
+                {
+                    controller = "sensorMeasurementTypes",
+                    measurementtypeid = RouteParameter.Optional
+                });
+
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }

@@ -4,6 +4,12 @@ namespace WeatherStationDataModel.Entities
 {
     public class Sensor
     {
+        public Sensor()
+        {
+            MeasurementTypes = new List<MeasurementType>();    
+            Measurements = new List<Measurement>();
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

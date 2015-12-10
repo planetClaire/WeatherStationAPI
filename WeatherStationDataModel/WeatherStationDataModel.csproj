@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201512080923516_Initial.Designer.cs">
       <DependentUpon>201512080923516_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512100943503_MeasurementTypesCanBelongToMultipleSensors.cs" />
+    <Compile Include="Migrations\201512100943503_MeasurementTypesCanBelongToMultipleSensors.Designer.cs">
+      <DependentUpon>201512100943503_MeasurementTypesCanBelongToMultipleSensors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WeatherStationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +72,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512080923516_Initial.resx">
       <DependentUpon>201512080923516_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512100943503_MeasurementTypesCanBelongToMultipleSensors.resx">
+      <DependentUpon>201512100943503_MeasurementTypesCanBelongToMultipleSensors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

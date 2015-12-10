@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
 using WeatherStationDataModel.Entities;
 
@@ -14,15 +13,25 @@ namespace WeatherStationDataModel
             _context = context;
         }
 
+        public bool SaveChanges()
+        {
+            return _context.SaveChanges() > 0;
+        }
+
         public IQueryable<Sensor> GetSensors()
         {
-            return _context.Sensors;
+            return _context.Sensors.Include("MeasurementTypes");
         }
 
         public Sensor GetSensor(int id)
         {
-            //_context.Database.Log = message => Trace.WriteLine(message);
-            return _context.Sensors.Find(id);
+            return _context.Sensors.Include("MeasurementTypes").FirstOrDefault(s => s.Id == id);
+        }
+
+        public bool Insert(Sensor entity)
+        {
+            _context.Sensors.Add(entity);
+            return SaveChanges();
         }
 
         public IQueryable<MeasurementType> GetMeasurementTypes()
@@ -32,13 +41,8 @@ namespace WeatherStationDataModel
 
         public bool Insert(MeasurementType entity)
         {
-            _context.Database.Log = message => Trace.WriteLine(message);
             _context.MeasurementTypes.Add(entity);
-            if (_context.SaveChanges() > 0)
-            {
-                return true;
-            }
-            return false;
+            return SaveChanges();
         }
 
         public MeasurementType GetMeasurementType(int measurementtypeid)
@@ -51,7 +55,13 @@ namespace WeatherStationDataModel
             var measurementType = _context.MeasurementTypes.Find(measurementtypeid);
             if (measurementType == null) return false;
             _context.MeasurementTypes.Remove(measurementType);
-            return _context.SaveChanges() > 0;
+            return SaveChanges();
+        }
+
+        public bool DeleteSensorMeasurementType(Sensor sensor, MeasurementType sensorMeasurementType)
+        {
+            _context.Database.Log = message => Trace.WriteLine(message);
+            return sensor.MeasurementTypes.Remove(sensorMeasurementType) && SaveChanges();
         }
     }
 }
