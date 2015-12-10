@@ -15,10 +15,14 @@ namespace WeatherStationAPI
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+                "Sensor",
+                "api/sensors/{sensorid}",
+                new
+                {
+                    controller = "Sensors",
+                    sensorid = RouteParameter.Optional
+                }
+                );
 
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();

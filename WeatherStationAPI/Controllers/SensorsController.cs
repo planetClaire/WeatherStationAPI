@@ -1,33 +1,27 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.Http;
 using WeatherStationAPI.Models;
 using WeatherStationDataModel;
 
 namespace WeatherStationAPI.Controllers
 {
-    public class SensorsController : ApiController
+    public class SensorsController : BaseApiController
     {
-        private readonly IWeatherStationRepository _repo;
-        private readonly ModelFactory _modelFactory;
-
-        public SensorsController(IWeatherStationRepository repo)
+        public SensorsController(IWeatherStationRepository repo) : base(repo)
         {
-            _repo = repo;
-            _modelFactory = new ModelFactory();
         }
 
         public IEnumerable<SensorModel> Get()
         {
-            return _repo.GetAllSensors()
+            return TheRepository.GetAllSensors()
                 .OrderBy(s => s.Name)
                 .ToList()
-                .Select(s => _modelFactory.CreateSensorModel(s));
+                .Select(s => TheModelFactory.CreateSensorModel(s));
         }
 
         public SensorModel Get(int id)
         {
-            return _modelFactory.CreateSensorModel(_repo.GetSensor(id));
+            return TheModelFactory.CreateSensorModel(TheRepository.GetSensor(id));
         }
     }
 }
