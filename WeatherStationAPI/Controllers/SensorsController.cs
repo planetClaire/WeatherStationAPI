@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using WeatherStationAPI.Models;
+﻿using System.Linq;
+using System.Net;
+using System.Net.Http;
 using WeatherStationDataModel;
 
 namespace WeatherStationAPI.Controllers
@@ -11,17 +11,28 @@ namespace WeatherStationAPI.Controllers
         {
         }
 
-        public IEnumerable<SensorModel> Get()
+        public HttpResponseMessage Get()
         {
-            return TheRepository.GetAllSensors()
-                .OrderBy(s => s.Name)
-                .ToList()
-                .Select(s => TheModelFactory.CreateSensorModel(s));
+            var sensors = TheRepository.GetAllSensors();
+            if (sensors != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, sensors
+                    .OrderBy(s => s.Name)
+                    .ToList()
+                    .Select(s => TheModelFactory.CreateSensorModel(s)));
+            }
+            return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
-        public SensorModel Get(int id)
+        public HttpResponseMessage Get(int sensorid)
         {
-            return TheModelFactory.CreateSensorModel(TheRepository.GetSensor(id));
+            var sensor = TheRepository.GetSensor(sensorid);
+            if (sensor != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK,
+                    TheModelFactory.CreateSensorModel(sensor));
+            }
+            return Request.CreateResponse(HttpStatusCode.NotFound);
         }
     }
 }
