@@ -18,8 +18,7 @@ namespace WeatherStationDataModel
         {
             throw new System.NotImplementedException();
         }
-
-        public IQueryable<Sensor> GetAllSensors()
+        public IQueryable<Sensor> GetSensors()
         {
             return _context.Sensors;
         }

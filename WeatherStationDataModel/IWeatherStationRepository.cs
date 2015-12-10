@@ -8,8 +8,7 @@ namespace WeatherStationDataModel
         // General
         bool SaveAll();
 
-        // Sensor
-        IQueryable<Sensor> GetAllSensors();
+        IQueryable<Sensor> GetSensors();
         Sensor GetSensor(int id);
         IQueryable<MeasurementType> GetMeasurementTypes();
         bool Insert(MeasurementType entity);

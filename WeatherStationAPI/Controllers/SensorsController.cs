@@ -13,7 +13,7 @@ namespace WeatherStationAPI.Controllers
 
         public HttpResponseMessage Get()
         {
-            var sensors = TheRepository.GetAllSensors();
+            var sensors = TheRepository.GetSensors();
             if (sensors != null)
             {
                 return Request.CreateResponse(HttpStatusCode.OK, sensors
