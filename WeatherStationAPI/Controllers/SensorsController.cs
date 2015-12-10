@@ -19,7 +19,7 @@ namespace WeatherStationAPI.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK, sensors
                     .OrderBy(s => s.Name)
                     .ToList()
-                    .Select(s => TheModelFactory.CreateSensorModel(s)));
+                    .Select(s => TheModelFactory.Create(s)));
             }
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }
@@ -30,7 +30,7 @@ namespace WeatherStationAPI.Controllers
             if (sensor != null)
             {
                 return Request.CreateResponse(HttpStatusCode.OK,
-                    TheModelFactory.CreateSensorModel(sensor));
+                    TheModelFactory.Create(sensor));
             }
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }

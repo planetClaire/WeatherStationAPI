@@ -13,7 +13,7 @@ namespace WeatherStationAPI.Models
             _urlHelper = new UrlHelper(request);
         }
 
-        public SensorModel CreateSensorModel(Sensor sensor)
+        public SensorModel Create(Sensor sensor)
         {
             return new SensorModel
             {
