@@ -21,9 +21,13 @@ namespace WeatherStationDataModel
 
         public IQueryable<Sensor> GetAllSensors()
         {
-            _context.Database.Log = message => Trace.WriteLine(message);
             return _context.Sensors;
         }
 
+        public Sensor GetSensor(int id)
+        {
+            //_context.Database.Log = message => Trace.WriteLine(message);
+            return _context.Sensors.Find(id);
+        }
     }
 }

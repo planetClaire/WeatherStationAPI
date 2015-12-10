@@ -10,5 +10,6 @@ namespace WeatherStationDataModel
 
         // Sensor
         IQueryable<Sensor> GetAllSensors();
+        Sensor GetSensor(int id);
     }
 }
