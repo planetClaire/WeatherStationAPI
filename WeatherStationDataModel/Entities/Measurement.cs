@@ -2,7 +2,7 @@
 
 namespace WeatherStationDataModel.Entities
 {
-    public abstract class Measurement
+    public class Measurement
     {
         public int Id { get; set; }
         public MeasurementType MeasurementType { get; set; }

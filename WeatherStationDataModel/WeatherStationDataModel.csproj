@@ -52,13 +52,9 @@
     <Compile Include="Entities\Sensor.cs" />
     <Compile Include="Entities\TemperatureMeasurement.cs" />
     <Compile Include="IWeatherStationRepository.cs" />
-    <Compile Include="Migrations\201512080923516_Initial.cs" />
-    <Compile Include="Migrations\201512080923516_Initial.Designer.cs">
-      <DependentUpon>201512080923516_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512100943503_MeasurementTypesCanBelongToMultipleSensors.cs" />
-    <Compile Include="Migrations\201512100943503_MeasurementTypesCanBelongToMultipleSensors.Designer.cs">
-      <DependentUpon>201512100943503_MeasurementTypesCanBelongToMultipleSensors.cs</DependentUpon>
+    <Compile Include="Migrations\201512110738138_Reset.cs" />
+    <Compile Include="Migrations\201512110738138_Reset.Designer.cs">
+      <DependentUpon>201512110738138_Reset.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WeatherStationContext.cs" />
@@ -70,11 +66,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512080923516_Initial.resx">
-      <DependentUpon>201512080923516_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512100943503_MeasurementTypesCanBelongToMultipleSensors.resx">
-      <DependentUpon>201512100943503_MeasurementTypesCanBelongToMultipleSensors.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512110738138_Reset.resx">
+      <DependentUpon>201512110738138_Reset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
