@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Net.Http;
 using System.Web.Http.Routing;
 using WeatherStationDataModel.Entities;
@@ -26,6 +25,22 @@ namespace WeatherStationAPI.Models
             };
         }
 
+        public Sensor Parse(SensorModel sensorModel)
+        {
+            try
+            {
+                return new Sensor
+                {
+                    Name = sensorModel.Name,
+                    Description = sensorModel.Description
+                };
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public MeasurementTypeModel Create(MeasurementType measurementType)
         {
             return new MeasurementTypeModel
@@ -48,15 +63,16 @@ namespace WeatherStationAPI.Models
             }
         }
 
-        public Sensor Parse(SensorModel sensorModel)
+        public MeasurementModel Create(Measurement measurement)
+        {
+            return new MeasurementModel(measurement);
+        }
+
+        public Measurement Parse(MeasurementModel measurementModel)
         {
             try
             {
-                return new Sensor
-                {
-                    Name = sensorModel.Name,
-                    Description = sensorModel.Description
-                };
+                return measurementModel.CreateMeasurement();
             }
             catch
             {

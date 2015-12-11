@@ -6,6 +6,7 @@ namespace WeatherStationDataModel
     public interface IWeatherStationRepository
     {
         bool SaveChanges();
+
         IQueryable<Sensor> GetSensors();
         Sensor GetSensor(int id);
         bool Insert(Sensor entity);
@@ -16,5 +17,8 @@ namespace WeatherStationDataModel
         bool DeleteMeasurementType(int measurementtypeid);
         
         bool DeleteSensorMeasurementType(Sensor sensor, MeasurementType sensorMeasurementType);
+        
+        IQueryable<Measurement> GetMeasurements();
+        bool Insert(Measurement measurement);
     }
 }

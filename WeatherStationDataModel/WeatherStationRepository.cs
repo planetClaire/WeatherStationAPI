@@ -63,5 +63,16 @@ namespace WeatherStationDataModel
             _context.Database.Log = message => Trace.WriteLine(message);
             return sensor.MeasurementTypes.Remove(sensorMeasurementType) && SaveChanges();
         }
+
+        public IQueryable<Measurement> GetMeasurements()
+        {
+            return _context.Measurements;
+        }
+
+        public bool Insert(Measurement entity)
+        {
+            _context.Measurements.Add(entity);
+            return SaveChanges();
+        }
     }
 }
