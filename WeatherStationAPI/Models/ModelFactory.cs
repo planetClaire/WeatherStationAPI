@@ -26,6 +26,22 @@ namespace WeatherStationAPI.Models
             };
         }
 
+        public Sensor Parse(SensorModel sensorModel)
+        {
+            try
+            {
+                return new Sensor
+                {
+                    Name = sensorModel.Name,
+                    Description = sensorModel.Description
+                };
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public MeasurementTypeModel Create(MeasurementType measurementType)
         {
             return new MeasurementTypeModel
@@ -48,20 +64,61 @@ namespace WeatherStationAPI.Models
             }
         }
 
-        public Sensor Parse(SensorModel sensorModel)
+        public MeasurementModel Create(Measurement measurement)
         {
-            try
+            return new MeasurementModel
             {
-                return new Sensor
-                {
-                    Name = sensorModel.Name,
-                    Description = sensorModel.Description
-                };
-            }
-            catch
-            {
-                return null;
-            }
+                MeasurementDateTime = measurement.MeasurementDateTime,
+                MeasurementTypeId = measurement.MeasurementTypeId,
+                SensorId = measurement.SensorId
+            };
         }
+
+        public TemperatureMeasurementModel Create(TemperatureMeasurement temperatureMeasurement)
+        {
+            return new TemperatureMeasurementModel
+            {
+                Measurement = Create(temperatureMeasurement.Measurement),
+                Temperature = temperatureMeasurement.Temperature
+            };
+        }
+
+        public HumidityMeasurementModel Create(HumidityMeasurement humidityMeasurement)
+        {
+            return new HumidityMeasurementModel
+            {
+                Measurement = Create(humidityMeasurement.Measurement),
+                Humidity = humidityMeasurement.Humidity
+            };
+        }
+
+        public TemperatureMeasurement Parse(TemperatureMeasurementModel temperatureMeasurementModel)
+        {
+            return new TemperatureMeasurement
+            {
+                Measurement = Parse(temperatureMeasurementModel.Measurement),
+                Temperature = temperatureMeasurementModel.Temperature
+            };
+        }
+
+        public HumidityMeasurement Parse(HumidityMeasurementModel humidityMeasurementModel)
+        {
+            return new HumidityMeasurement
+            {
+                Measurement = Parse(humidityMeasurementModel.Measurement),
+                Humidity = humidityMeasurementModel.Humidity
+            };
+        }
+
+        private static Measurement Parse(MeasurementModel measurementModel)
+        {
+            return new Measurement
+            {
+                MeasurementDateTime = measurementModel.MeasurementDateTime,
+                MeasurementTypeId = measurementModel.MeasurementTypeId,
+                SensorId = measurementModel.SensorId
+            };
+        }
+
     }
 }

@@ -16,5 +16,11 @@ namespace WeatherStationDataModel
         bool DeleteMeasurementType(int measurementtypeid);
         
         bool DeleteSensorMeasurementType(Sensor sensor, MeasurementType sensorMeasurementType);
+        
+        IQueryable<Measurement> GetMeasurements();
+        bool Insert(TemperatureMeasurement entity);
+        bool Insert(HumidityMeasurement entity);
+        IQueryable<TemperatureMeasurement> GetTemperatureMeasurements();
+        IQueryable<HumidityMeasurement> GetHumidityMeasurements();
     }
 }

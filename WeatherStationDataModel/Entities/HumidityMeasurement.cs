@@ -11,5 +11,10 @@
         }
         
         public float Humidity { get; set; }
+
+        public HumidityMeasurement()
+        {
+            Measurement = new Measurement();
+        }
     }
 }

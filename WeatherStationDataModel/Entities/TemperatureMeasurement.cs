@@ -11,5 +11,11 @@
         }
 
         public float Temperature { get; set; }
+
+        public TemperatureMeasurement()
+        {
+            Measurement = new Measurement();
+        }
+
     }
 }

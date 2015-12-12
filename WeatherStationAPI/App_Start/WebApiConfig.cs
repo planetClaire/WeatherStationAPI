@@ -35,6 +35,24 @@ namespace WeatherStationAPI
                     measurementtypeid = RouteParameter.Optional
                 });
 
+            config.Routes.MapHttpRoute(
+                "Measurement", "api/measurements", new
+                {
+                    controller = "measurements"
+                });
+
+            config.Routes.MapHttpRoute(
+                "TemperatureMeasurement", "api/temperaturemeasurements", new
+                {
+                    controller = "temperatureMeasurements"
+                });
+
+            config.Routes.MapHttpRoute(
+                "HumidityMeasurement", "api/humiditymeasurements", new
+                {
+                    controller = "humidityMeasurements"
+                });
+
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDefault();
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }

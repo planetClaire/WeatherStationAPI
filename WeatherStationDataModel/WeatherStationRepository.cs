@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using WeatherStationDataModel.Entities;
 
@@ -62,6 +63,33 @@ namespace WeatherStationDataModel
         {
             _context.Database.Log = message => Trace.WriteLine(message);
             return sensor.MeasurementTypes.Remove(sensorMeasurementType) && SaveChanges();
+        }
+
+        public IQueryable<Measurement> GetMeasurements()
+        {
+            return _context.Measurements;
+        }
+
+        public bool Insert(TemperatureMeasurement entity)
+        {
+            _context.TemperatureMeasurements.Add(entity);
+            return SaveChanges();
+        }
+
+        public bool Insert(HumidityMeasurement entity)
+        {
+            _context.HumidityMeasurements.Add(entity);
+            return SaveChanges();
+        }
+
+        public IQueryable<TemperatureMeasurement> GetTemperatureMeasurements()
+        {
+            return _context.TemperatureMeasurements.Include(t => t.Measurement);
+        }
+
+        public IQueryable<HumidityMeasurement> GetHumidityMeasurements()
+        {
+            return _context.HumidityMeasurements.Include(h => h.Measurement);
         }
     }
 }

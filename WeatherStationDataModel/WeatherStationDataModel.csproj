@@ -56,6 +56,14 @@
     <Compile Include="Migrations\201512110738138_Reset.Designer.cs">
       <DependentUpon>201512110738138_Reset.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512110758474_Update.cs" />
+    <Compile Include="Migrations\201512110758474_Update.Designer.cs">
+      <DependentUpon>201512110758474_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512110800320_UpdateAgain.cs" />
+    <Compile Include="Migrations\201512110800320_UpdateAgain.Designer.cs">
+      <DependentUpon>201512110800320_UpdateAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WeatherStationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +76,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512110738138_Reset.resx">
       <DependentUpon>201512110738138_Reset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512110758474_Update.resx">
+      <DependentUpon>201512110758474_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512110800320_UpdateAgain.resx">
+      <DependentUpon>201512110800320_UpdateAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
